@@ -7,8 +7,6 @@ async function getBuscarLivrosDaAPI() {
   //await espere por uma promessa do endPoint
   const res = await fetch(endointDaAPI);
   livros = await res.json();
-
-  let livrosComDesconto = aplicarDesconto(livros);
-  console.table(livros);
+  livros = aplicarDesconto(livros);
   exibirOsLivrosNaTela(livrosComDesconto);
 }
